@@ -8,7 +8,7 @@ import { Image, Text, View } from "react-native";
 
 
 export default function Product() {
-  const { id, product } = useProduct()
+  const { id, product, handleAddToCart } = useProduct()
 
 
 
@@ -24,18 +24,18 @@ export default function Product() {
         <Text className="text-orange-400 text-2xl font-heading my-2">
           {formatCurrency(product.price)}
         </Text>
-        <Text className="text-neutral-300 font-body text-base leading-6 mb-6">
+        <Text className="text-neutral-200 font-body text-base leading-6 mb-6">
           {product.description}
         </Text>
 
         {product.ingredients.map((ingredient) => (
-          <Text className="text-neutral-400 font-body text-base leading-6" key={ingredient}>
+          <Text className="text-neutral-300/90 font-body text-base leading-6" key={ingredient}>
             {"\u2022"}  {ingredient}
           </Text>
         ))}
       </View>
       <View className="p-5 pb-8 gap-5">
-        <Button>
+        <Button onPress={handleAddToCart}>
           <Button.Icon>
             <Feather name="plus-circle" size={20} />
           </Button.Icon>

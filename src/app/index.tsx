@@ -10,12 +10,12 @@ import { Product } from '@/components/Product';
 
 
 export default function Home() {
-  const { category, handleCategorySelect, CATEGORIES, MENU, sectionListRef } = useHome()
+  const { category, handleCategorySelect, CATEGORIES, MENU, sectionListRef, cartQuantityItems } = useHome()
 
 
   return (
     <View className=" flex-1 pt-8">
-      <Header title="Cardápio" cartQuantityItems={8} />
+      <Header title="Cardápio" cartQuantityItems={cartQuantityItems} />
       <FlatList
         data={CATEGORIES}
         keyExtractor={(item) => item}
