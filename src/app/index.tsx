@@ -10,7 +10,14 @@ import { Product } from '@/components/Product';
 
 
 export default function Home() {
-  const { category, handleCategorySelect, CATEGORIES, MENU, sectionListRef, cartQuantityItems } = useHome()
+  const {
+    category,
+    handleCategorySelect,
+    CATEGORIES,
+    MENU,
+    sectionListRef,
+    cartQuantityItems
+  } = useHome()
 
 
   return (

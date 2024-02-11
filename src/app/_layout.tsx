@@ -1,5 +1,6 @@
 import { Slot } from "expo-router";
-import { SafeAreaView } from "react-native";
+import { useColorScheme } from "nativewind";
+import { SafeAreaView, Appearance } from "react-native";
 import {
   Poppins_400Regular,
   Poppins_500Medium,
@@ -11,6 +12,8 @@ import { Loading } from "@/components/loading";
 
 
 export default function HomeLayout() {
+
+
   const [fontsLoading] = useFonts({
     Poppins_400Regular,
     Poppins_500Medium,
@@ -22,7 +25,7 @@ export default function HomeLayout() {
     return <Loading />
   }
   return (
-    <SafeAreaView className="bg-neutral-800 flex-1 text-neutral-200">
+    <SafeAreaView className=" bg-neutral-800 flex-1 text-neutral-200">
       <Slot />
     </SafeAreaView>
   )

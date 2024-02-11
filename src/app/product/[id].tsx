@@ -4,6 +4,7 @@ import { LinkButton } from "@/components/link-button";
 import { useProduct } from "@/hooks/useProduct";
 import { formatCurrency } from "@/utils/format-currency";
 import { Feather } from "@expo/vector-icons";
+import { Redirect } from "expo-router";
 import { Image, Text, View } from "react-native";
 
 
@@ -11,6 +12,9 @@ export default function Product() {
   const { id, product, handleAddToCart } = useProduct()
 
 
+  if (!product) {
+    return <Redirect href="/" />
+  }
 
   return (
     <View className="flex-1">
@@ -20,7 +24,12 @@ export default function Product() {
         source={product.cover}
       />
 
+
+
       <View className="p-5 mt-8 flex-1">
+        <Text className="text-neutral-100 text-2xl font-heading">
+          {product.title}
+        </Text>
         <Text className="text-orange-400 text-2xl font-heading my-2">
           {formatCurrency(product.price)}
         </Text>

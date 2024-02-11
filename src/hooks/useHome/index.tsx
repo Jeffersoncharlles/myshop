@@ -1,5 +1,5 @@
 import { useCartStore } from "@/stores/cart-store"
-import { CATEGORIES, MENU } from "@/utils/data/products"
+import { CATEGORIES, MENU, ProductProps } from "@/utils/data/products"
 import { useRef, useState } from "react"
 import { SectionList } from "react-native"
 
@@ -13,7 +13,7 @@ export const useHome = () => {
   }, 0)
 
 
-  const sectionListRef = useRef<SectionList>(null)
+  const sectionListRef = useRef<SectionList<ProductProps>>(null)
 
   function handleCategorySelect(selectedCategory: string) {
     setCategory(selectedCategory)
