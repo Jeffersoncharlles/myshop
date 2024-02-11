@@ -1,10 +1,12 @@
+import { Link } from 'expo-router';
+import { View, FlatList, SectionList, Text } from 'react-native';
+
 import { CategoryButton } from '@/components/cartegory';
 import { Header } from '@/components/header';
-import { View, FlatList, SectionList, Text } from 'react-native';
 
 import { useHome } from '@/hooks/useHome';
 import { Product } from '@/components/Product';
-import { useRef } from 'react';
+
 
 
 export default function Home() {
@@ -38,7 +40,9 @@ export default function Home() {
         keyExtractor={(item) => item.id}
         stickySectionHeadersEnabled={false}
         renderItem={({ item }) => (
-          <Product data={item} />
+          <Link href={`/product/${item.id}`} asChild >
+            <Product data={item} />
+          </Link>
         )}
         renderSectionHeader={({ section: { title } }) => (
           <Text className='text-xl text-neutral-100 font-heading mt-8 mb-3'>{title}</Text>
