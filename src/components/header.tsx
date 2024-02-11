@@ -1,6 +1,5 @@
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import { Feather } from '@expo/vector-icons'
-import Logo from '@/assets/logo.png'
 import colors from "tailwindcss/colors";
 
 interface Props {
@@ -13,10 +12,6 @@ export function Header({ title, cartQuantityItems = 0 }: Props) {
   return (
     <View className="flex-row items-center border-b border-orange-500 pb-5 mx-5">
       <View className="flex-1">
-        {/* <Image
-          className="w-32 h-6"
-          source={Logo}
-        /> */}
         <View className="flex-row items-center">
           <Feather name="shopping-bag" color={colors.orange[500]} size={36} />
           <Text className="font-heading text-2xl text-orange-500 pl-2">MyShop</Text>

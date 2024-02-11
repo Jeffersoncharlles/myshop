@@ -4,7 +4,7 @@ const MENU = [
     data: [
       {
         id: "1",
-        title: "X-React",
+        title: "X-ComeTudo",
         price: 24.9,
         description:
           "Um hamburger tão bonito que me deu fome enquanto eu fazia esse layout para o projeto...",
@@ -28,7 +28,7 @@ const MENU = [
     data: [
       {
         id: "2",
-        title: "X-JavaScript",
+        title: "X-Come&Chora",
         price: 34.9,
         description:
           "Os ingredientes desse hambúrguer mudam toda semana, então você sempre terá uma surpresa...",
@@ -36,18 +36,18 @@ const MENU = [
         thumbnail: require("../../assets/products/thumbnail/2.png"),
         ingredients: [
           "Pão brioche;",
-          "2x carnes smash (blend da casa) de 80g;",
+          "2x carnes smash (blend da casa) de 190g;",
           "Queijo cheddar;",
           "Alface;",
           "Tomate;",
-          "Picles;",
+          "2x Ovos;",
           "Cebola;",
           "Molho da casa;",
         ],
       },
       {
         id: "3",
-        title: "X-Cobol",
+        title: "X-MenosCheio",
         price: 32.7,
         description:
           "Aquele hambúrguer que não podemos tirar do cardápio devido aos clientes mais antigos da hamburgueria...",
@@ -55,18 +55,17 @@ const MENU = [
         thumbnail: require("../../assets/products/thumbnail/3.png"),
         ingredients: [
           "Pão brioche;",
-          "2x carnes smash (blend da casa) de 80g;",
+          "1x carnes smash (blend da casa) de 80g;",
           "Queijo cheddar;",
           "Alface;",
           "Tomate;",
-          "Picles;",
           "Cebola;",
           "Molho da casa;",
         ],
       },
       {
         id: "4",
-        title: "X-Tailwind",
+        title: "X-DeLeve",
         price: 29.9,
         description:
           "Aquele que você não gosta de primeira, mas depois fica viciado e não consegue mais largar...",
@@ -74,12 +73,10 @@ const MENU = [
         thumbnail: require("../../assets/products/thumbnail/4.png"),
         ingredients: [
           "Pão brioche;",
-          "2x carnes smash (blend da casa) de 80g;",
+          "1x carnes smash (blend da casa) de 80g;",
           "Queijo cheddar;",
           "Alface;",
           "Tomate;",
-          "Picles;",
-          "Cebola;",
           "Molho da casa;",
         ],
       },
