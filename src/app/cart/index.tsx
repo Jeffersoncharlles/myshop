@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 
@@ -17,7 +17,14 @@ import colors from "tailwindcss/colors";
 
 
 export default function Cart() {
-  const { products, total, handleProductRemove } = useCartPage()
+  const {
+    products,
+    total,
+    handleProductRemove,
+    handleGetLocation,
+    handleOrder,
+    setAddress,
+  } = useCartPage()
 
   return (
     <View className="flex-1 pt-8">
@@ -49,9 +56,9 @@ export default function Cart() {
               )
             }
             <View className="flex-row gap-2 items-center mt-5 ml-4 mb-4 relative ">
-              <View className="absolute  right-0 top-2 rounded-full bg-lime-600 h-8 w-8 flex items-center justify-center">
+              <TouchableOpacity disabled activeOpacity={0.8} onPress={handleGetLocation} className="absolute  right-0 top-2 rounded-full bg-lime-600 h-8 w-8 flex items-center justify-center">
                 <SimpleLineIcons name="location-pin" size={24} color={colors.lime[950]} />
-              </View>
+              </TouchableOpacity>
               <Text className="text-neutral-50 text-2xl font-subtitle">
                 Total
               </Text>
@@ -59,13 +66,19 @@ export default function Cart() {
                 {total}
               </Text>
             </View>
-            <Input placeholder="Informe o endereço de entrega com rua, bairro, CEP, numero e complemento, enviar a localização " />
+            <Input
+              onChangeText={setAddress}
+              placeholder="Informe o endereço de entrega com rua, bairro, CEP, numero e complemento, enviar a localização"
+              onSubmitEditing={handleOrder}
+              blurOnSubmit={true}
+              returnKeyType="next"
+            />
           </View>
         </ScrollView>
       </KeyboardAwareScrollView>
       <View className="p-5 gap-5  ">
 
-        <Button>
+        <Button onPress={() => handleOrder()}>
           <Button.Text>
             Enviar pedido
           </Button.Text>
