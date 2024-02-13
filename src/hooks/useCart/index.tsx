@@ -7,7 +7,7 @@ import { Alert, Linking } from "react-native";
 import { useNavigation } from "expo-router";
 
 
-const PHONE = "5562993982602"
+const PHONE = "5562998126838"
 
 export const useCartPage = () => {
   const navigation = useNavigation()
